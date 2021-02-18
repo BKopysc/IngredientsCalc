@@ -135,6 +135,9 @@ function viewTXT() {
         console.log("view");
 
         var wnd = window.open("about:blank", "_blank");
+        wnd.document.write("<head>");
+        wnd.document.write("<meta name=viewport content=width=device-width, initial-scale=1></meta>");
+        wnd.document.write("</head>");
         wnd.document.write("<h2>Your indegrients</h2>");
         wnd.document.write(("<p>" + "For " + wantedAmount + " portions" + "</p>"));
         wnd.document.write("<ul>")
@@ -155,6 +158,7 @@ function viewTXT() {
             }
         }
         wnd.document.write("</ul>");
+        wnd.document.write("<button type=button onclick=window.print()>Print</button>")
 
 
     }
