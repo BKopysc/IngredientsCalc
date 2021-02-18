@@ -15,7 +15,7 @@ Have fun with cooking !
 
 https://indigrient-calc.herokuapp.com
 
-#### Polish
+# Kalkulator składników
 Czy kiedykolwiek miałeś sytuację, w której musiałeś wykonać wiele obliczeń do przepisu? 
 Teraz nie musisz tego robić! Wystarczy, że:
 1. Wstawisz listę składników
