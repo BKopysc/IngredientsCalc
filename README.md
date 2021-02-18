@@ -27,3 +27,5 @@ Możesz również:
 2. Otworzyć w nowej zakładce i wydrukować! (kliknij 👁️)
 
 Miłej zabawy z gotowaniem!
+
+https://indigrient-calc.herokuapp.com
