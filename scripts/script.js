@@ -5,10 +5,27 @@ var wantedAmount;
 var input;
 var output;
 
+originAmount = document.getElementById("originAmount").value;
+wantedAmount = document.getElementById("wantedAmount").value;
+input = document.getElementById("originText").value;
+output = document.getElementById("convertedText");
+
 function isNumeric(str) {
-    if (typeof str != "string") return false // we only process strings!  
+    if (typeof str != "string") {
+        return false // we only process strings!
+    }
+    if (str === "/") {
+        //console.log("wow");
+        return true
+    }
     return !isNaN(str) && // use type coercion to parse the _entirety_ of the string (`parseFloat` alone does not do this)...
         !isNaN(parseFloat(str)) // ...and ensure strings of whitespace fail
+}
+
+function converFraction(str) {
+    tab = str.split("/");
+    res = parseFloat(tab[0]) / parseFloat(tab[1]);
+    return res;
 }
 
 function convertIndegrients(origin, wanted, input) {
@@ -16,31 +33,42 @@ function convertIndegrients(origin, wanted, input) {
 
 
     var converted = [];
+    var fractionFlag = false;
     var seq = ""
     for (var i = 0; i < tab.length; i++) {
         if (isNumeric(tab[i])) {
+            //console.log(tab[i]);
             if (seq === "") {
                 seq = tab[i];
             } else {
                 seq += tab[i];
             }
 
-            var nextCharIndex = i+1;
+            var nextCharIndex = i + 1;
 
             if (nextCharIndex < tab.length && isNumeric(tab[nextCharIndex])) {
+                if (tab[nextCharIndex] == "/") {
+                    fractionFlag = true;
+                }
                 continue;
+    
             }
             else {
-                var res = parseFloat(seq) / parseFloat(originAmount);
-                res = res * parseFloat(wanted);
-               // console.log(res);
-                converted.push(res);
-                /*
-                var res = parseFloat(tab[i]) / parseFloat(originAmount);
-                res = res * parseFloat(wanted);
-                console.log(res);
-                converted.push(res);
-                */
+
+                if (fractionFlag === true) {
+                    fractionFlag = false;
+                    var new_seq = converFraction(seq);
+                    //console.log("frac "+ new_seq);
+                    var res = new_seq / parseFloat(originAmount);
+                    res = res * parseFloat(wanted);
+                    converted.push(res);
+                }
+                else {
+                    //console.log(seq);
+                    var res = parseFloat(seq) / parseFloat(originAmount);
+                    res = res * parseFloat(wanted);
+                    converted.push(res);
+                }
             }
 
         }
@@ -51,9 +79,7 @@ function convertIndegrients(origin, wanted, input) {
             converted.push(tab[i]);
         }
     }
-    console.log(converted.join(""));
-
-
+    //console.log(converted.join(""));
     //console.log(tab);
     output.value = converted.join("");
 }
@@ -85,12 +111,51 @@ function download(filename, text) {
     document.body.removeChild(element);
 }
 
-downloadButton.onclick = function () {
-    console.log("download");
-    filename = "TastyDinner";
-    randomNum = Math.floor((100000) * Math.random());
-    filename += randomNum.toString();
-    filename += ".txt";
-    console.log(filename);
-    download(filename, ("Your indegrients:\n" + output.value));
+function saveTXT() {
+    if (originAmount === "" || wantedAmount === "" || input === "") {
+        alert("Insert some data");
+    }
+    else {
+        console.log("download");
+        filename = "TastyDinner";
+        randomNum = Math.floor((100000) * Math.random());
+        filename += randomNum.toString();
+        filename += ".txt";
+        download(filename, ("Your indegrients:\n" + output.value));
+
+
+    }
+}
+
+function viewTXT() {
+    if (originAmount === "" || wantedAmount === "" || input === "") {
+        alert("Insert some data");
+    }
+    else {
+        console.log("view");
+
+        var wnd = window.open("about:blank", "_blank");
+        wnd.document.write("<h2>Your indegrients</h2>");
+        wnd.document.write(("<p>" + "For " + wantedAmount + " portions" + "</p>"));
+        wnd.document.write("<ul>")
+        var word = "";
+        for (var i = 0; i < output.value.length; i++) {
+            //console.log(output.value[i]);
+
+            if (output.value[i] != "\n") {
+                word += output.value[i];
+            } else {
+                wnd.document.write(("<li>" + word + "</li>"));
+                word = "";
+            }
+
+            if (i + 1 >= output.value.length) {
+                //console.log("end");
+                wnd.document.write(("<li>" + word + "</li>"));
+            }
+        }
+        wnd.document.write("</ul>");
+
+
+    }
 }

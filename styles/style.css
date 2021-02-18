@@ -58,6 +58,12 @@ html {
         font-stretch: expanded;
         margin-bottom: 5px;
     }
+    #viewButton {
+        top: 10px;
+        left: 10px;
+    }
+    
+
 }
 
 @media screen and (min-width: 600px) {
@@ -101,6 +107,12 @@ html {
         font-size: 20px;
         font-weight: 600;
     }
+    #viewButton {
+        left: unset;
+        top: 10px;
+        right: 70px;
+    }
+
 }
 
 .origin-amount-inputs, .wanted-amount-inputs {
@@ -142,27 +154,36 @@ html {
     transform: translateY(4px);
 }
 
-#downloadButton {
+#downloadButton, #viewButton {
     background-color: rgb(129, 32, 255);
     text-align: left;
     font-size: 25px;
-    width: 40px;
+    width: 45px;
     height: 40px;
     border: none;
     border-radius: 5px;
     color: #FFFFFF;
     position: absolute;
     box-shadow: 0 5px #999;
+
+}
+
+#downloadButton {
     top: 10px;
     right: 10px;
 }
 
-#downloadButton:hover {
+
+#downloadButton:hover, #viewButton:hover {
     background-color: rgba(81, 22, 158, 0.993)
 }
 
-#downloadButton:active {
+#downloadButton:active, #viewButton:active {
     background-color: rgba(81, 22, 158, 0.993);
     box-shadow: 0 2px #666;
     transform: translateY(4px);
+}
+
+#author {
+    color:white;
 }

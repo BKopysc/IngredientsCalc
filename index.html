@@ -15,10 +15,12 @@
 
     <form action="">
         <div class="input">
-            <textarea id="originText" name="originText" rows="5" cols="33" placeholder="Insert indegrients..."></textarea>
+            <textarea id="originText" name="originText" rows="5" cols="33"
+                placeholder="Insert indegrients..."></textarea>
         </div>
         <div class="output">
-            <textarea id="convertedText" name="convertedText" rows="5" cols="33" readonly placeholder="Waiting for input..."></textarea>
+            <textarea id="convertedText" name="convertedText" rows="5" cols="33" readonly
+                placeholder="Waiting for input..."></textarea>
         </div>
     </form>
 
@@ -35,10 +37,18 @@
         <button name="calculateButton" id="calculateButton" type="button">Cook it!</button>
     </div>
 
-    <button id="downloadButton" type="button">💾</button>
+    <button id="downloadButton" type="button" onclick="saveTXT()">💾</button>
+    <button id="viewButton" type="button" onclick="viewTXT()">👁️</button>
 
-    <script src="scripts/script.js"></script>
+    <script type="text/javascript" src="scripts/script.js"></script>
+
 
 </body>
+
+<footer>
+    
+    <p id="author">By @BKopysc</p>
+
+</footer>
 
 </html>
