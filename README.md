@@ -11,3 +11,5 @@ Also you can:
 2. Open in a new tab and print it!
 
 Have fun with cooking !
+
+https://indigrient-calc.herokuapp.com
