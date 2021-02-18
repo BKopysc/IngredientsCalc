@@ -13,7 +13,7 @@ Also you can:
 
 Have fun with cooking !
 
-https://indigrient-calc.herokuapp.com
+https://ingredient-calculator.herokuapp.com
 
 # Kalkulator składników
 Czy kiedykolwiek miałeś sytuację, w której musiałeś wykonać wiele obliczeń do przepisu? 
@@ -28,4 +28,4 @@ Możesz również:
 
 Miłej zabawy z gotowaniem!
 
-https://indigrient-calc.herokuapp.com
+https://ingredient-calculator.herokuapp.com
