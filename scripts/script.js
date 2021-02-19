@@ -162,6 +162,8 @@ function viewTXT() {
     }
 }
 
+
+
 function showPreview()
 {
     console.log("preview")
@@ -174,5 +176,6 @@ function showPreview()
 
     var cook = document.getElementById("calculateButton");
     cook.click();
+    console.log("showed");
 
 }
