@@ -159,7 +159,20 @@ function viewTXT() {
         }
         wnd.document.write("</ul>");
         wnd.document.write("<button type=button onclick=window.print()>Print</button>")
-
-
     }
+}
+
+function showPreview()
+{
+    console.log("preview")
+    var originAmount = document.getElementById("originAmount")
+    originAmount.value = "2";
+    var wantedAmount = document.getElementById("wantedAmount")
+    wantedAmount.value = "7";
+    var originText = document.getElementById("originText")
+    originText.value = "This is an example:\n1 egg \n2 cups of milk\n1/2 cup of flour";
+
+    var cook = document.getElementById("calculateButton");
+    cook.click();
+
 }
