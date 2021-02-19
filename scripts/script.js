@@ -12,14 +12,13 @@ output = document.getElementById("convertedText");
 
 function isNumeric(str) {
     if (typeof str != "string") {
-        return false // we only process strings!
+        return false 
     }
     if (str === "/") {
-        //console.log("wow");
         return true
     }
-    return !isNaN(str) && // use type coercion to parse the _entirety_ of the string (`parseFloat` alone does not do this)...
-        !isNaN(parseFloat(str)) // ...and ensure strings of whitespace fail
+    return !isNaN(str) && 
+        !isNaN(parseFloat(str)) 
 }
 
 function converFraction(str) {
@@ -79,8 +78,6 @@ function convertIndegrients(origin, wanted, input) {
             converted.push(tab[i]);
         }
     }
-    //console.log(converted.join(""));
-    //console.log(tab);
     output.value = converted.join("");
 }
 
@@ -163,19 +160,3 @@ function viewTXT() {
 }
 
 
-
-function showPreview()
-{
-    console.log("preview")
-    var originAmount = document.getElementById("originAmount")
-    originAmount.value = "2";
-    var wantedAmount = document.getElementById("wantedAmount")
-    wantedAmount.value = "7";
-    var originText = document.getElementById("originText")
-    originText.value = "This is an example:\n1 egg \n2 cups of milk\n1/2 cup of flour";
-
-    var cook = document.getElementById("calculateButton");
-    cook.click();
-    console.log("showed");
-
-}
