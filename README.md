@@ -1,4 +1,4 @@
-`Pure HTML with CSS`
+`HTML + CSS + js`
 
 #### English (Polish below)
 # Ingredietns Calc
