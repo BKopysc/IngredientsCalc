@@ -1,3 +1,5 @@
+`Pure HTML with CSS`
+
 #### English (Polish below)
 # Ingredietns Calc
 Have you ever had a situation when you need to make a lot of calculations for recipe ?
