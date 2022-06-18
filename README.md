@@ -31,3 +31,5 @@ Możesz również:
 Miłej zabawy z gotowaniem!
 
 https://ingredient-calculator.herokuapp.com
+
+![img](https://github.com/BKopysc/herokuIngredientCalc/blob/master/ingredients_calc.png)
