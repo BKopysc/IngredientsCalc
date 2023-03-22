@@ -15,7 +15,7 @@ Also you can:
 
 Have fun with cooking !
 
-http://ingredients-calc.netlify.app
+https://ingredients-calc.netlify.app
 
 # Kalkulator składników
 Czy kiedykolwiek miałeś sytuację, w której musiałeś wykonać wiele obliczeń do przepisu? 
@@ -30,6 +30,6 @@ Możesz również:
 
 Miłej zabawy z gotowaniem!
 
-http://ingredients-calc.netlify.app
+https://ingredients-calc.netlify.app
 
 ![img](https://github.com/BKopysc/herokuIngredientCalc/blob/master/ingredients_calc.png)
