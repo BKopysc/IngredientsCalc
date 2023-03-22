@@ -1,7 +1,7 @@
 `HTML + CSS + js`
 
 #### English (Polish below)
-# Ingredietns Calc
+# Ingredients Calc
 Have you ever had a situation when you need to make a lot of calculations for recipe ?
 Now, you don't need to do this!
 You just have to:
